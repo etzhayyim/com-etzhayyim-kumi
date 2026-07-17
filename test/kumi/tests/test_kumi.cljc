@@ -7,8 +7,7 @@
             #?(:clj [clojure.java.io :as io])
             [kumi.methods.kumi :as k]))
 
-#?(:clj (def actor-dir (-> *file* io/file .getParentFile .getParentFile)))
-#?(:clj (def seed-path (io/file actor-dir "data" "seed-communities.kotoba.edn")))
+#?(:clj (def seed-path (io/file "data" "seed-communities.kotoba.edn")))
 #?(:clj (def seed (k/load-seed seed-path)))
 
 ;; ── shape / graph ──────────────────────────────────────────────────────────

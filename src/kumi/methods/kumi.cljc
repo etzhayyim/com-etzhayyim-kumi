@@ -220,8 +220,7 @@
 #?(:clj
    (defn -main [& args]
      (let [path (or (first args)
-                    (-> *file* io/file .getParentFile .getParentFile
-                        (io/file "data" "seed-communities.kotoba.edn") str))
+                    (str (io/file "data" "seed-communities.kotoba.edn")))
            r (beat (load-seed path))]
        (println "kumi 組 beat:")
        (println "  communities:" (:community-count r) " ties:" (:tie-count r))
